@@ -1,15 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/styles/index.css" />
-    <!-- check scripts -->
-    <script defer src="./assets/scripts/views/homeView.js"></script>
-    <title>Hacker Health Tracker</title>
-  </head>
-  <body>
-    <h1>HELLO WORLD</h1>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/client/assets/styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;600&family=Inknut+Antiqua:wght@600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;600&family=Inknut+Antiqua:wght@600&family=Manrope:wght@300&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <title>Hacker Health Login</title>
+</head>
+
+<body>
+    
+    <!-- First card (on the left) -->
+    <div class="screen__background-1">
+
+        <!-- Main shapes -->
+        <span class="screen__background__shape screen__background__shape1"></span>
+        <span class="screen__background__shape screen__background__shape4"></span>
+     </div>
+
+     <!-- Card container -->
+    <div class="container-1">
+        <div class="screen-1">
+            <div class="screen__content-1">
+                <form class="welcome-text"><h1>Welcome to Hacker your personal health tracker.</h1></form>
+                <form class="additional-text"><h3>Please login --></h3></form>
+                <!-- Using action on the form as opposed to an onclick for the button -->
+                <form class="login-1" action="signup.html">
+                    <button class="button signup__submit" >
+                        <span class="button__text">No account? Sign up here</span>
+                    </button>					
+                </form>
+            </div>
+            
+        <!-- Signup card shapes -->
+            <div class="screen__background-1">
+               <span class="screen__background__shape screen__background__shape4"></span>
+               <span class="screen__background__shape screen__background__shape1"></span>
+            </div>	
+        </div>
+
+        <!-- Login card (on the right) -->
+        <div class="container">
+            <div class="screen">
+                <div class="screen__content">
+                    <form class="login">
+                        <div class="login__field">
+                            <i class="login__icon fas fa-user"></i>
+                            <input type="text" class="login__input" placeholder="Username / Email">
+                        </div>
+                        <div class="login__field">
+                            <i class="login__icon fas fa-lock"></i>
+                            <input type="password" class="login__input" placeholder="Password">
+                        </div>
+                        <button class="button login__submit">
+                            <span class="button__text">Log me in!</span>
+                            <i class="button__icon fas fa-chevron-right"></i>
+                        </button>					
+                    </form>
+                </div>
+
+            <!-- Login card shapes -->
+                <div class="screen__background">
+                    <span class="screen__background__shape screen__background__shape4"></span>
+                    <span class="screen__background__shape screen__background__shape3"></span>		
+                    <span class="screen__background__shape screen__background__shape2"></span>
+                    <span class="screen__background__shape screen__background__shape1"></span>
+                </div>		
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+
 </html>

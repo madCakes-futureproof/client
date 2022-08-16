@@ -32,6 +32,7 @@
                 <form class="additional-text"><h3>Please login --></h3></form>
                 <!-- Using action on the form as opposed to an onclick for the button -->
                 <form class="login-1" action="signup.html">
+                    <!-- Submit button -->
                     <button class="button signup__submit" >
                         <span class="button__text">No account? Sign up here</span>
                     </button>					
@@ -52,12 +53,15 @@
                     <form class="login">
                         <div class="login__field">
                             <i class="login__icon fas fa-user"></i>
-                            <input type="text" class="login__input" placeholder="Username / Email">
+                            <!-- username input -->
+                            <input type="text" required id="username" name="username" class="login__input" placeholder="Username / Email">
                         </div>
                         <div class="login__field">
                             <i class="login__icon fas fa-lock"></i>
-                            <input type="password" class="login__input" placeholder="Password">
+                            <!-- Password input -->
+                            <input type="password" required id="password" name="password"  class="login__input" placeholder="Password">
                         </div>
+                        <!-- Submit button -->
                         <button class="button login__submit">
                             <span class="button__text">Log me in!</span>
                             <i class="button__icon fas fa-chevron-right"></i>

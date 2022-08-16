@@ -377,6 +377,8 @@ h2 {
 	transition: .2s;
 }
 
+
+
 .habit-section {
 	background: linear-gradient(90deg, #f5f7f7, #9cd0cf);	
 	padding: 20px;
@@ -476,3 +478,75 @@ h2 {
   .submit-habit {
 	width: 25%;
   }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 5rem;
+    background: linear-gradient(90deg, #17c7c4, #005c75);
+}
+
+.brand a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+}
+
+li {
+    list-style-type: none;
+    margin-left: 3rem;
+}
+
+li > a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+
+li::after {
+    content: '';
+    width: 0rem;
+    height: 0.15rem;
+    background-color: #fff;
+    display: block;
+    border-radius: 0.2rem;
+    margin: 0.2rem auto 0 auto;
+    transition: all 0.3s ease-in-out;
+}
+
+li:hover::after {
+    width: 2rem;
+}
+
+.container-3 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 80vh;
+   
+}
+
+.screen-3 {		
+	background: linear-gradient(90deg, #f5f7f7, #9cd0cf);		
+	position: relative;	
+	height: 620px;
+	width: 1000px;	
+	box-shadow: rgba(0, 0, 1, 2) 0 8px 15px;
+	border-radius: 10px;
+	
+}
+
+.screen__content-3 {
+	z-index: 1;
+	position: relative;	
+	height: 100%;
+}

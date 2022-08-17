@@ -14,10 +14,19 @@ body {
 
 /* Left-hand container */
 
+
 h1 {
+    font-family: 'Playfair Display', serif;
+}
+.title-page {
+	padding-top: 80px;
+    padding-left: 40px;
+
+}
+.main-page {
 	text-align: center;
     padding-top: 30px;
-    font-family: 'Playfair Display', serif;
+
 }
 
 h3 {
@@ -25,6 +34,7 @@ h3 {
     padding-left: 40px;
     font-family: 'Manrope', sans-serif;
 }
+
 
 .container-1 {
 	display: flex;
@@ -62,11 +72,6 @@ h3 {
 
 /* Main screen background shapes */
 
-.screen__content-1 {
-	z-index: 1;
-	position: relative;	
-	height: 100%;
-}
 
 .screen__background__shape {
 	transform: rotate(45deg);
@@ -270,11 +275,6 @@ h3 {
 
 /* signup page */
 
-h2 {
-    padding-top: 40px;
-    padding-left: 40px;
-    font-family: 'Playfair Display', serif;
-}
 
 .container-2 {
 	display: flex;
@@ -559,11 +559,7 @@ li:hover::after {
 	border-radius: 10px;
 }
 
-.screen__content-3 {
-	/* z-index: 1;
-	position: relative;	
-	height: 100%; */
-}
+
 
 .checkbox {
 	width: 2vh;

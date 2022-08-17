@@ -26,7 +26,11 @@ h1 {
 .main-page {
 	text-align: center;
     padding-top: 30px;
+}
 
+.habit-box {
+    text-align: center;
+	padding-bottom:20px;
 }
 
 h3 {
@@ -382,9 +386,9 @@ h3 {
 
 .habit-section {
 	background: linear-gradient(90deg, #f5f7f7, #9cd0cf);	
-	padding: 60px;
+	padding: 30px;
 	border-radius: 15px; 
-	margin-top: 2.5vh;
+	margin-top: 1vh;
 	padding-bottom: 5vh;
 	margin-bottom: 5vh;
 	width: 110vh;

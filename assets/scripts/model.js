@@ -1,23 +1,61 @@
 const addHabits = document.querySelector(".add-habit");
 const habitsList = document.querySelector(".habits");
+const { API_URL } = require("./config");
+const { postJSON } = require("./helpers");
+const createHabitObj = require("./model2")
+
+// send to server 
 const habits = JSON.parse(localStorage.getItem("habits")) || [];
+
+
+function streak() {
+    // let streakCount = 0;
+    // let repetitions =
+
+    // if(repetitions = )
+    let counter = 0;
+    let submitButton = document.getElementById('submitButton');
+
+    let inputSubmitButton = document.getElementById('inputSubmit');
+
+    submitButton.addEventListener('click', function() {
+      counter++;
+      console.log(counter);
+    });
+
+
+    inputSubmitButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    counter++;
+    console.log(counter);
+    });
+
+}
 
 function addHabit(e) {
   e.preventDefault();
-  const text = this.querySelector("[name=habit]").value;
-  const totalCounts = +this.querySelector("[name=reps]").value;
-  const timeframe = this.querySelector("[name=timeframe]").value;
+  const name = this.querySelector("[name=habit]").value;
+  const repetitions = +this.querySelector("[name=reps]").value;
+  const frequency = this.querySelector("[name=timeframe]").value;
+
+  // setup on html
+  const completed = Boolean;
+  const streak = beans;
+  const user_id = null;
+
   const habit = {
-    text: text,
-    reps: 0,
-    totalCounts: totalCounts,
-    timeframe: timeframe,
-    completed: false,
+    name: name,
+    repetitions: repetitions,
+    frequency: frequency,
+    completed: completed,
+    streak: streak,
   };
 
-  habits.push(habit);
-  listHabits(habits, habitsList);
-  localStorage.setItem("habits", JSON.stringify(habits));
+  postJSON(API_URL, habit)
+
+  listHabits(habit, habitsList);
+
+
   this.reset();
   console.log(habit);
 }

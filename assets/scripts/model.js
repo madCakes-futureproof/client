@@ -5,7 +5,7 @@ const habits = JSON.parse(localStorage.getItem("habits")) || [];
 function addHabit(e) {
   e.preventDefault();
   const text = this.querySelector("[name=habit]").value;
-  const totalCounts = +this.querySelector("[name=reps]").value;
+  const totalCounts = this.querySelector("[name=reps]").value;
   const timeframe = this.querySelector("[name=timeframe]").value;
   const habit = {
     text: text,
@@ -47,16 +47,31 @@ function toggleCompleted(e) {
   const index = el.dataset.index;
   habits[index].reps += 1;
 
-  if (habits[index].reps === habits[index].totalCounts) {
-    habits[index].completed = true;
-  } else if (habits[index].reps > habits[index].totalCounts) {
+  if (habits[index].reps > habits[index].totalCounts) {
     habits[index].reps = 0;
     habits[index].completed = false;
+  } 
+  if (habits[index].reps === habits[index].totalCounts) {
+    habits[index].completed = true;
+    incrementStreak()
+    habits[index].reps = 0
   }
 
   listHabits(habits, habitsList);
   localStorage.setItem("habits", JSON.stringify(habits));
 }
+
+function incrementStreak() {
+    let counter = 0
+    counter++
+    return counter
+    // display streak
+}
+
+function displayStreak() {
+    
+}
+
 
 // Delete Habit
 function deleteHabit(e) {

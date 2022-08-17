@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/styles/styles.css">
+    <script src="./assets/scripts/model.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;600&family=Inknut+Antiqua:wght@600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
@@ -12,8 +13,111 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;600&family=Inknut+Antiqua:wght@600&family=Manrope:wght@300&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
     <title>Health tracker</title>
-</head>
-
-<body>
     
+    <body> 
+    <header>
+    <div class="brand"><a href="index.html">Hacker Health Tracker</a></div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Your posts</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Our Works</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <!-- Checklist card container -->
+    <div class="container-3">
+        <div class="screen-3">
+            <div class="screen__content-1">
+                
+                <center><form class="welcome-text"><h1>Your health and wellbeing checklist!</h1></form></center>
+                <div class="check-list">
+                <div class="checklist-left">
+                    <h3>
+                    <img class="checkbox"  src="assets/images/checkbox.png" alt="checkbox"> Spend time outdoors </br> 
+                    <img class="checkbox"  src="assets/images/checkbox.png" alt="checkbox"> Stretch for a minimum of 5 mins </br>
+                    <img class="checkbox"  src="assets/images/checkbox.png" alt="checkbox"> Avoid continuously sitting for more than 1 hour </br>
+                    <img class="checkbox"  src="assets/images/checkbox.png" alt="checkbox"> Get at least 6-8 hours of sleep per night </br>
+                    <img class="checkbox"  src="assets/images/checkbox.png" alt="checkbox"> Drink 7-8 glasses of water </br>
+                    <img class="checkbox"  src="assets/images/checkbox.png" alt="checkbox"> Do push-ups </br>
+                    <img class="checkbox"  src="assets/images/checkbox.png" alt="checkbox"> Contact a friend or relative </br>
+                </h3>
+                </div>
+                <div class="checklist-right"></div>
+                <h3>
+                    <img class="checkbox"  src="assets/images/checkbox.png" alt="checkbox"> Do sit-ups </br>
+                    <img class="checkbox"  src="assets/images/checkbox.png" alt="checkbox"> Eat healthy meal or snack </br>
+                    <img class="checkbox"  src="assets/images/checkbox.png" alt="checkbox"> Jog or brisk walk (in steps) </br>
+                    <img class="checkbox"  src="assets/images/checkbox.png" alt="checkbox"> Listen to a favourite song </br>
+                    <img class="checkbox"  src="assets/images/checkbox.png" alt="checkbox"> Do some breathing exercises </br>
+                    <img class="checkbox"  src="assets/images/checkbox.png" alt="checkbox"> Take yourself on a solo date </br>
+                    <img class="checkbox"  src="assets/images/checkbox.png" alt="checkbox"> Log off social media for a day </br>
+                </h3>
+                </div>
+
+        <!-- Checklist card shapes -->
+        
+            </div>	
+            <div class="screen__background-1">
+                <span class="screen__background__shape screen__background__shape3"></span>
+                <span class="screen__background__shape screen__background__shape2"></span>
+                <span class="screen__background__shape screen__background__shape1"></span>
+            </div>
+        </div>
+    </div>       
+</div>  
+    </div>
+
+    <div class="container-3">
+        <!-- <div class="screen-3"> -->
+            <!-- <div class="screen__content-1"> -->
+                
+                <div class="habit-section">
+                    <h1>Track Your Habits Here!</h1>
+                    <p></p>
+                    <form class="add-habit">
+                      <input
+                        class="habit"
+                        type="text"
+                        name="habit"
+                        placeholder="Enter Habit Name"
+                        required
+                      />
+                      <input
+                        type="number"
+                        name="reps"
+                        placeholder="Number of repetitions"
+                        min="1"
+                        required
+                      />
+                      <div class="frequency">
+                        <label for="timeframe">Frequency: </label>
+                        <select name="timeframe" id="timeframe">
+                          <option value="Daily">Daily</option>
+                          <option value="Weekly">Weekly</option>
+                          <option value="Monthly">Monthly</option>
+                          <option value="Yearly">Yearly</option>
+                        </select>
+                      </div>
+                      <input class="submit-habit" type="submit" value="+ Add Habit" />
+                    </form>
+                
+                    <ul class="habits">
+                        <li></li>
+                      </ul>
+                    </div>
+        <!-- Checklist card shapes -->
+        
+            </div>	
+            <!-- <div class="screen__background-1">
+                <span class="screen__background__shape screen__background__shape3"></span>
+                <span class="screen__background__shape screen__background__shape2"></span>
+                <span class="screen__background__shape screen__background__shape1"></span> -->
+            </div>
+        </div>
+    </div>
 </body>
+
+</html>

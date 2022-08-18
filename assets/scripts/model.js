@@ -2,17 +2,21 @@ const addHabits = document.querySelector(".add-habit");
 const habitsList = document.querySelector(".habits");
 const habits = JSON.parse(localStorage.getItem("habits")) || [];
 
+let habit = {}
+
 function addHabit(e) {
   e.preventDefault();
   const text = this.querySelector("[name=habit]").value;
   const totalCounts = this.querySelector("[name=reps]").value;
   const timeframe = this.querySelector("[name=timeframe]").value;
-  const habit = {
+
+  habit = {
     text: text,
     reps: 0,
     totalCounts: totalCounts,
     timeframe: timeframe,
     completed: false,
+    streak: 0
   };
 
   habits.push(habit);
@@ -33,6 +37,7 @@ function listHabits(habit = [], habitsList) {
             <label for="habit${i}"><span>${habit.reps}/${habit.totalCounts} ${
         habit.timeframe
       }</span> ${habit.text}</label>
+      <p>Streak:${habit.streak}</p>
         <button class="delete" data-index=${i} id="delete${i}">Delete</button>
         </li>
         `;
@@ -64,8 +69,13 @@ function toggleCompleted(e) {
 function incrementStreak() {
     let counter = 0
     counter++
-    return counter
+
+    habit.streak = counter
+    return habit.streak
     // display streak
+}
+const showStreak = function() {
+    return 
 }
 
 function displayStreak() {

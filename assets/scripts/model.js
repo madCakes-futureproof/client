@@ -45,26 +45,28 @@ function listHabits(habit = [], habitsList) {
     .join("");
 }
 
+
+
 // Toggle If Complete
-function toggleCompleted(e) {
-  if (!e.target.matches("input")) return;
-  const el = e.target;
-  const index = el.dataset.index;
-  habits[index].reps += 1;
+// function toggleCompleted(e) {
+//   if (!e.target.matches("input")) return;
+//   const el = e.target;
+//   const index = el.dataset.index;
+//   habits[index].reps += 1;
 
-  if (habits[index].reps > habits[index].totalCounts) {
-    habits[index].reps = 0;
-    habits[index].completed = false;
-  } 
-  if (habits[index].reps === habits[index].totalCounts) {
-    habits[index].completed = true;
-    incrementStreak()
-    habits[index].reps = 0
-  }
+//   if (habits[index].reps > habits[index].totalCounts) {
+//     habits[index].reps = 0;
+//     habits[index].completed = false;
+//   } 
+//   if (habits[index].reps === habits[index].totalCounts) {
+//     habits[index].completed = true;
+//     incrementStreak()
+//     habits[index].reps = 0
+//   }
 
-  listHabits(habits, habitsList);
-  localStorage.setItem("habits", JSON.stringify(habits));
-}
+//   listHabits(habits, habitsList);
+//   localStorage.setItem("habits", JSON.stringify(habits));
+// }
 
 function incrementStreak() {
     let counter = 0
@@ -85,14 +87,7 @@ function displayStreak() {
 
 // Delete Habit
 function deleteHabit(e) {
-  if (!e.target.matches("button")) return;
-  const el = e.target;
-  const index = el.dataset.index;
-
-  habits.splice(index, 1);
-
-  listHabits(habits, habitsList);
-  localStorage.setItem("habits", JSON.stringify(habits));
+  
 }
 
 addHabits.addEventListener("submit", addHabit);

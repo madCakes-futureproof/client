@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/styles/styles.css">
-    <script src="./assets/scripts/model.js" defer></script>
+    <script src="./assets/scripts/main.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;600&family=Inknut+Antiqua:wght@600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
@@ -77,15 +77,17 @@
                 <div class="habit-section">
                     <h1 class="habit-box">Track Your Habits Here!</h1>
                     <p></p>
-                    <form class="add-habit">
+                    <form class="add-habit" id="newHabit" >
                       <input
                         class="habit"
+                        id = "name"
                         type="text"
                         name="habit"
                         placeholder="Enter Habit Name"
                         required
                       />
                       <input
+                        id = 'repetitions'
                         type="number"
                         name="reps"
                         placeholder="Number of repetitions"
@@ -101,7 +103,7 @@
                           <option value="Yearly">Yearly</option>
                         </select>
                       </div>
-                      <input class="submit-habit" type="submit" value="+ Add Habit" />
+                      <input class="submit-habit" type="submit" value="+ Add Habit" method="post"/>
                     </form>
                 
                     <ul class="habits">

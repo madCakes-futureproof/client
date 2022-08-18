@@ -1,10 +1,10 @@
 // get form data
 const newHabit = document.getElementById('newHabit')
-console.log(newHabit)
+const habitContainer = document.querySelector('.habits')
 
 newHabit.addEventListener('submit', addHabit)
 
-const habits = {}
+const habits = []
 
 async function addHabit(e) {
     e.preventDefault()
@@ -26,14 +26,15 @@ async function addHabit(e) {
 
         habits.push(habit)
 
-        console.log(content)
+        console.log(habit)
 
         
         const options = {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-            }
+            },
+            body: JSON.stringify(habit)
         }
         
         const response = await fetch("https://hacker-health-tracker.herokuapp.com/habits", options)
@@ -41,32 +42,32 @@ async function addHabit(e) {
         
         console.log(data)
 
-        displayHabit()
+        displayHabit(habits)
+        
         
     } catch (err){
         alert(err)
     }
 }
 
-displayHabit(habits)
+
 
 function displayHabit(habits) {
 
-    habits.forEach(habit => {
-        
-        
-    });
-    const markup = `
-        <li>
-        <input type="checkbox" ${
-    habit.completed ? "checked" : ""
-    } />
-        <label><span>${habit.repetitions}/${habit.repetitions} ${
-    habit.timeframe
-    }</span> ${habit.text}</label>
-    <p>Streak:${habit.streak}</p>
-    <button class="delete" ">Delete</button>
-    </li>`
-
-        
+    habitContainer.innerHTML = habits.map(habit => {
+        return `
+            <li>
+            <input type="checkbox" ${
+        habit.completed ? "checked" : ""
+        } />
+            <label><span>${0}/${habit.repetitions} ${
+        habit.frequency
+        }</span> ${habit.name}  </label>
+        <br/>
+        <p>  Streak:  ${habit.streak}</p>
+        <button class="delete" ">Delete</button>
+        </li>`
+            
+    }).join()   
 }
+

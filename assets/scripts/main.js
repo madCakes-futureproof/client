@@ -94,13 +94,15 @@ function displayHabit(habits) {
             deleteButton.setAttribute('class', "button");
             deleteButton.textContent = 'Delete';
 
+            console.log(streak.textContent)
             incrementBtn.addEventListener('click', (e) => {
                 counter.textContent = parseInt(counter.textContent) + 1;
                 if (counter.textContent === repetitions.textContent) {
                     incrementBtn.disabled = true;
                 }
                 if (counter.textContent === repetitions.textContent) {
-                    streak.textContent = parseInt(streak.textContent) + 1
+                    streak.textContent = parseInt(streak.textContent) + 1;
+                    updateStreak(streak.textContent)
                 }
                 if (counter.textContent === repetitions.textContent) {
                     counter.textContent = 0;
@@ -128,6 +130,32 @@ function displayHabit(habits) {
 
 displayHabit();
 
+function updateStreak(streak) {
+        
+            const options = {
+                method: "put",
+                headers: {
+                    "Content-Type": "application/json" 
+                },
+                body: JSON.stringify(
+                    {
+                          "streak": document.getElementsByClassName("streak").value,
+    
+                      }
+                    
+                  )
+                
+                }
+        
+            fetch(`https://hacker-health-tracker.herokuapp.com/habits`, options)
+            .then(res => res.json())
+            .then(data => {
+        
+                console.log(data);
+            })
+            .catch(err => alert("Ooops! Couldn`t update!"))
+        }
+
 async function deleteHabit() {
         
             const options = {
@@ -150,6 +178,8 @@ async function deleteHabit() {
             .then(data => console.log(data))      
             .catch(err => alert("Habit not deleted"))
         }
+
+
     
 
 

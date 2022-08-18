@@ -1,12 +1,36 @@
+
+
 const API_URL = `http://localhost:3000/`;
 // 'https://hacker-health-tracker.herokuapp.com/';
+const loginURL = 'https://hacker-health-tracker.herokuapp.com/users/'
 
+
+
+
+
+
+
+
+// Target form ✅
 let userLoginForm = document.querySelector(".login");
 // let userRegisterForm = document.querySelector(".login-2")
 
-userLoginForm.addEventListener('submit', login);
+// get data from form ✅
+const username = document.getElementById("username").value
+const password = document.getElementById("password").value
+
+// const usernameValue = username.querySelector("[name=habit]").value;
+
+// 
+userLoginForm.addEventListener('submit', login(username, password));
 // userRegisterForm.addEventListener('submit', register);
 
+
+
+async function login (data) {
+    // post to /users
+    postJSON(loginURL, data)
+}
 
 async function login (data) {
     
@@ -30,7 +54,7 @@ async function login (data) {
             }
         })
         .catch(err => alert(err))
-    }
+}
 
     document.querySelector(".login").addEventListener("submit", (e) => {
         e.preventDefault();

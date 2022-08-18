@@ -61,8 +61,8 @@ function displayHabit(habits) {
             divContainer.setAttribute('class', "divContainer");
            
             let counter = document.createElement('div');
-            const reps = document.createElement('p');
-                reps.textContent ='Completed'
+            // const reps = document.createElement('p');
+            //     reps.textContent ='Completed'
                 counter.setAttribute('class', "counter");
                 counter.textContent = 0;
 
@@ -81,7 +81,7 @@ function displayHabit(habits) {
                 streak.setAttribute('class', "streak");
                 streak.textContent = habit.streak;
 
-            counter.appendChild(reps);
+            // counter.appendChild(reps);
             frequency.appendChild(goal);
             streak.appendChild(streakText)
 
@@ -95,9 +95,13 @@ function displayHabit(habits) {
 
             incrementBtn.addEventListener('click', (e) => {
                 counter.textContent = parseInt(counter.textContent) + 1;
-            })  
-
-            
+                if (counter.textContent === repetitions.textContent) {
+                    incrementBtn.disabled = true;
+                }
+                if (counter.textContent === repetitions.textContent) {
+                    streak.textContent = parseInt(streak.textContent) + 1
+                }
+            })       
                    
 
             divContainer.appendChild(incrementBtn);

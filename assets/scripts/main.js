@@ -55,12 +55,14 @@ async function addHabit(e) {
 function displayHabit(habits) {
 
     habitContainer.innerHTML = habits.map(habit => {
+
+        let counter = 0;
         return `
             <li>
-            <input type="checkbox" ${
+            <input type="checkbox" id="counter" ${
         habit.completed ? "checked" : ""
-        } />
-            <label><span>${0}/${habit.repetitions} ${
+        }/>
+            <label><span>${counter}/${habit.repetitions} ${
         habit.frequency
         }</span> ${habit.name}  </label>
         <br/>
@@ -69,5 +71,9 @@ function displayHabit(habits) {
         </li>`
             
     }).join()   
+
+    const countEl = document.getElementById('counter');
+    countEl.addEventListener('click', () => ++)
 }
+
 

@@ -59,10 +59,11 @@ function displayHabit(habits) {
         habits.forEach(habit => {
             const divContainer = document.createElement('div');
             divContainer.setAttribute('class', "divContainer");
+
+            const name = document.createElement('span');
+            name.textContent =  habit.name;
            
             let counter = document.createElement('div');
-            // const reps = document.createElement('p');
-            //     reps.textContent ='Completed'
                 counter.setAttribute('class', "counter");
                 counter.textContent = 0;
 
@@ -101,9 +102,16 @@ function displayHabit(habits) {
                 if (counter.textContent === repetitions.textContent) {
                     streak.textContent = parseInt(streak.textContent) + 1
                 }
-            })       
+                if (counter.textContent === repetitions.textContent) {
+                    counter.textContent = 0;
+                    incrementBtn.disabled = false;
+                }
+           
+            
+            deleteButton.addEventListener('click', deleteHabit);
+            })
                    
-
+            divContainer.appendChild(name);
             divContainer.appendChild(incrementBtn);
             divContainer.appendChild(counter);
             divContainer.appendChild(repetitions);
@@ -119,6 +127,30 @@ function displayHabit(habits) {
 }
 
 displayHabit();
+
+async function deleteHabit() {
+        
+            const options = {
+                method: "delete",
+                headers: {
+                    "Content-Type": "application/json" 
+                }
+            }
+        
+            await fetch(`https://hacker-health-tracker.herokuapp.com/habits`, options)
+            .then(res => {
+                if (res.ok) {
+                    console.log('Habit deleted');
+                } else {
+                    console.log('Habit not deleted');
+                }
+                return res;
+            })
+            .then(res => res.json())
+            .then(data => console.log(data))      
+            .catch(err => alert("Habit not deleted"))
+        }
+    
 
 
 // function updateCount() {

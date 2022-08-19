@@ -53,7 +53,7 @@ async function login (data) {
                 throw "Unable to authenticate!"
             }
         })
-        .catch(err => alert(err))
+        // .catch(err => alert(err))
 }
 
     document.querySelector(".login").addEventListener("submit", (e) => {

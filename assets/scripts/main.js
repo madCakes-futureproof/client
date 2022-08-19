@@ -153,7 +153,7 @@ function updateStreak(streak) {
         
                 console.log(data);
             })
-            .catch(err => alert("Ooops! Couldn`t update!"))
+            // .catch(err => alert("Ooops! Couldn`t update!"))
         }
 
 async function deleteHabit() {

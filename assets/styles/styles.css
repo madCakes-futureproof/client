@@ -118,15 +118,19 @@ h3 {
 	border-radius: 120px 120px 120px 120px;
 }
 
-
-/* right-hand container */
-
 .container {
 	display: flex;
 	align-items: center;
-	justify-content: right;
+	justify-content: center;
 	min-height: 100vh;
-    padding-left: 210px;
+}
+
+.container-right {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+    padding-left: 200px;
 }
 
 .screen {		

@@ -9,9 +9,26 @@
 
 body {
 	background: linear-gradient(90deg, #17c7c4, #005c75);		
-	overflow: hidden;
 }
 
+.divContainer {
+	display: flex;
+	flex-direction: row;
+	width: 50%;
+	border: 1px solid black;
+	margin: 10px;
+}
+
+.button {
+	color: blueviolet;
+	padding: 10px;
+	font-size: 18px;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.repetitions {
+	padding: 10px
+}
 
 /* Left-hand container */
 
